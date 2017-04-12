@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import sys
 import argparse
 import json
@@ -123,7 +124,7 @@ def urlvoid(html_page):
 def vt_ip(ip, api):
     url = "https://www.virustotal.com/vtapi/v2/ip-address/report"
     params = {"ip": ip, "apikey": api}
-    r = requests.get(url, params, headers=UA)
+    r = requests.get(url, params=params, headers=UA)
     if r.status_code == 204:
         return 204
     if r.status_code == 200:
@@ -175,7 +176,7 @@ def vt_ip(ip, api):
 def vt_domain(domain, api):
     url = "https://www.virustotal.com/vtapi/v2/domain/report"
     params = {"domain": domain, "apikey": api}
-    r = requests.get(url, params, headers=UA)
+    r = requests.get(url, params=params, headers=UA)
     if r.status_code == 204:
         return 204
     if r.status_code == 200:
@@ -232,7 +233,7 @@ def vt_domain(domain, api):
 def vt_hash(h, api):
     url = "https://www.virustotal.com/vtapi/v2/file/report"
     params = {"resource": h, "apikey": api}
-    r = requests.get(url, params, headers=UA)
+    r = requests.get(url, params=params, headers=UA)
     if r.status_code == 204:
         return 204
     if r.status_code == 200:
@@ -252,7 +253,7 @@ def vt_url(domain, api):
     if domain:
         url = "https://www.virustotal.com/vtapi/v2/url/report"
         params = {"resource": "http://" + domain, "apikey": api}
-        r = requests.get(url, params, headers=UA)
+        r = requests.get(url, params=params, headers=UA)
         if r.status_code == 204:
             return 204
         if r.status_code == 200:
