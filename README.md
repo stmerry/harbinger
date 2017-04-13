@@ -6,9 +6,9 @@ Install required packages with
 pip install -r requirements.txt
 ```
 
-You can put API keys inside a script.
+You can put Cymon/VT API keys inside the script.
 
-Results will be saved as json files for file analysis mode or printed on screen for single item.
+Results will be saved as json files for the file analysis mode or printed on screen for single items.
 
 # Usage
 ```
